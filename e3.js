@@ -10,7 +10,7 @@ function senhaValida(senha)
         mistura cases, ou seja, faltam letras maiúsculas ou minúsculas.
         Se esse for o caso, retornar false.
     */
-    if (senha.toLowerCase() !== senha) {
+    if (senha.toLowerCase() === senha || senha.toUpperCase() === senha) {
         return false;
     }
 
@@ -30,3 +30,4 @@ console.log(senhaValida("Curta1"));
 console.log(senhaValida("toda_minuscula1"));
 console.log(senhaValida("TODA_MAIUSCULA1"));
 console.log(senhaValida("Sem_numeros"));
+console.log(senhaValida("SenhaBoa001"))
