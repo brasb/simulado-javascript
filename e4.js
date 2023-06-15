@@ -1,7 +1,10 @@
-function factorial(x)
+function fatorial(x)
 {
-    // Só inteiros têm fatorial.
-    if (x < 0) {
+    // Se x mudar quando arredondado, não é inteiro.
+    let inteiro = Math.floor(x) === x;
+
+    // Só números naturais têm fatorial.
+    if (x < 0 || !inteiro) {
         return NaN;
     }
 
@@ -11,7 +14,8 @@ function factorial(x)
     }
 
     // O fatorial de um número é um número multiplicado pelo fatorial dele -1.
-    return x * factorial(x - 1);
+    return x * fatorial(x - 1);
 }
 
-console.log(factorial(4));
+// Demonstração com 4! (24).
+console.log(fatorial(4));

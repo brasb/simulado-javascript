@@ -10,7 +10,7 @@ function inverterString(str) {
     
     /*
         Os caracteres fornecidos seram lidos de trás para frente. E cada
-        elemento será adicionado na lista de output.
+        elemento será adicionado na lista de caracteres de output.
     */
     for (let i = caracteresInput.length - 1; i >= 0; i--) {
         caracteresOutput.push(caracteresInput[i]);
@@ -27,4 +27,5 @@ function inverterString(str) {
     return resultado;
 }
 
+// Demonstração.
 console.log(inverterString("!odnum ,álO"));

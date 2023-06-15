@@ -1,16 +1,27 @@
 function contarVogais(str)
 {
-    const VOGAIS = ["a", "e", "i", "o", "u"];
+    // Lista de vogais, para comparação.
+    const VOGAIS = [
+        "a", "e", "i", "o", "u", "á", "é", "í", "ó", "ú", "ã", "â", "ê", "ô"
+    ];
 
     /*
-        Vê se cada vogal está na lista
+       Serão checadas todos os caracteres de str. Para cada vogal, o valor de
+       numeroVogais será incrementado.
     */
-    let nVogais = 0;
-    str.toLowerCase().forEach(letra => {
-        
-    });
+    let numeroVogais = 0;
+    for (let letra of str) {
+        /*
+            Conversão a lower case para a comparação funcionar mesmo se str
+            possuir letras maiúsculas.
+        */
+        if (VOGAIS.includes(letra.toLowerCase())) {
+            numeroVogais++;
+        }
+    }
 
+    return numeroVogais;
 }
 
-
-console.log(contarVogais("cinco vogais"))
+// Demonstração.
+console.log(contarVogais("Essa string é composta de cartorze vogais."));

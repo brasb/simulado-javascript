@@ -1,8 +1,6 @@
-console.log("Exercício 1")
-
 function checarPrimo(x)
 {
-    // Se ele mudar quando arredondado, não é inteiro.
+    // Se x mudar quando arredondado, não é inteiro.
     let inteiro = Math.floor(x) === x;
 
     // Números não inteiros, negativos, 0 e 1 não podem ser primos.
@@ -12,22 +10,22 @@ function checarPrimo(x)
     }
 
     /*
-        Todos os números naturais maiores que 2 são checados para ver se x é
-        primo. O número não será primo se for encontrado algum valor que não
-        gere resto quando divisor de x.
+        Todos os números naturais menores que x e maiores que 1 são checados
+        para ver se x é primo. O número não será primo se for encontrado algum
+        valor que não gere resto quando divisor de x.
         Pois um número primo necessariamente só pode ser divisível por 1 e por
         ele mesmo.
     */ 
-    let result = true;
-    for (let n = x - 1; n > 1 && result; n--) {
-        result = x % n !== 0;
+    let resultado = true;
+    for (let n = x - 1; n > 1 && resultado; n--) {
+        resultado = x % n !== 0;
     }
 
-    return result;
+    return resultado;
 }
 
-// Testa vários números primos diferentes.
-for (let i = -1; i <= 100; i++) {
+// Testa vários números números diferentes como demonstração.
+for (let i = -1; i <= 20; i++) {
     let r = checarPrimo(i);
-    console.log("Resultado: ", r, ". Número: ", i);
+    console.log("Número: " + i + ". É primo? " + r + ".");
 }

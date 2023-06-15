@@ -6,8 +6,8 @@ function senhaValida(senha)
     }
 
     /*
-        Se a string não mudar com a troca de case, significa que ela não 
-        mistura cases, ou seja, faltam letras maiúsculas ou minúsculas.
+        Se a string não mudar com nenhuma conversão de case, significa que ela
+        não mistura letras maiúsculas e minúsculas. 
         Se esse for o caso, retornar false.
     */
     if (senha.toLowerCase() === senha || senha.toUpperCase() === senha) {
@@ -26,8 +26,11 @@ function senhaValida(senha)
     return true;
 }
 
+// Testa senhas inválidas.
 console.log(senhaValida("Curta1"));
-console.log(senhaValida("toda_minuscula1"));
-console.log(senhaValida("TODA_MAIUSCULA1"));
-console.log(senhaValida("Sem_numeros"));
-console.log(senhaValida("SenhaBoa001"))
+console.log(senhaValida("toda_minúscula1"));
+console.log(senhaValida("TODA_MAIÚSCULA1"));
+console.log(senhaValida("Sem_números"));
+
+// Testa uma senha válida.
+console.log(senhaValida("SenhaBoa001"));
